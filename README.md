@@ -20,6 +20,20 @@ Encrypt Vault is a C++ console application designed for secure user authenticati
   - Provides a patterned and user-friendly console interface.
   - Modular code structure for easy maintenance and extensibility.
 
+## Data Structures Used
+
+- **Map:**
+  - Used to store user data, mapping usernames to corresponding User structures.
+
+- **Struct (User):**
+  - Represents a user with attributes such as username, hashed password, and salt.
+
+- **String:**
+  - Various string operations are employed for password hashing, salt generation, and file handling.
+
+- **Vector (for future extensibility):**
+  - The program is structured to allow for potential future features that may benefit from the use of vectors.
+
 ## Usage
 
 1. **Registration:**
@@ -67,5 +81,3 @@ Encrypt Vault is a C++ console application designed for secure user authenticati
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
-
-#
