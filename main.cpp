@@ -242,11 +242,11 @@ int main()
 
                 int innerChoice;
                 cout << "Choose an option:\n";
-                cout << "**********************\n";
+                cout << "----------------------\n";
                 cout << "1. Secure File\n";
-                cout << "**********************\n";
+                cout << "----------------------\n";
                 cout << "2. Decrypt File\n";
-                cout << "**********************\n";
+                cout << "----------------------\n";
                 cout << "Enter your choice: ";
                 cin >> innerChoice;
 
@@ -255,7 +255,7 @@ int main()
                     int passwordLength = 200;
                     string randomPassword = generateRandomPassword(passwordLength);
 
-                    cout << "Random Password: " << randomPassword << endl;
+                    // cout << "Random Password: " << randomPassword << endl;
 
                     // Text File Generator
                     string fileName = "password.txt";
@@ -264,8 +264,8 @@ int main()
                     // Password Encrypt
                     string encryptedPassword = custom_shift(randomPassword, 10);
 
-                    cout << "Original: " << randomPassword << endl;
-                    cout << "Encrypted: " << encryptedPassword << endl;
+                    // cout << "Original: " << randomPassword << endl;
+                    // cout << "Encrypted: " << encryptedPassword << endl;
 
                     // Reading the file format
 
@@ -286,7 +286,10 @@ int main()
                     // }
 
                     // Zipping the file
-                    string sourceFile = "Data.txt";
+                    // string sourceFile = "Data.txt";
+                    cout << "Enter The File Location You Want To Secure" << endl;
+                    string sourceFile;
+                    cin >> sourceFile;
                     string zipFileName = "Protected\\Protected.zip";
                     const char *password = encryptedPassword.c_str();
 
@@ -305,7 +308,10 @@ int main()
                 else if (innerChoice == 2)
                 {
                     // Define the file name (change this to the path of your text file)
-                    string fileName = "password.txt";
+                    // string fileName = "password.txt";
+                    cout << "Enter The Password File Destination" << endl;
+                    string fileName;
+                    cin >> fileName;
 
                     // Create an input file stream
                     ifstream inputFile(fileName);
@@ -322,7 +328,7 @@ int main()
                     // Read and print each line of the file
                     while (getline(inputFile, line))
                     {
-                        cout << line << endl;
+                        // cout << line << endl;
                     }
 
                     // Close the file
@@ -337,9 +343,9 @@ int main()
                     // Decrypt the data
                     string decryptedText = custom_decrypt(encryptedText, shift);
 
-                    cout << "Original: " << plaintext << endl;
-                    cout << "Encrypted: " << encryptedText << endl;
-                    cout << "Decrypted: " << decryptedText << endl;
+                    // cout << "Original: " << plaintext << endl;
+                    // cout << "Encrypted: " << encryptedText << endl;
+                    // cout << "Decrypted: " << decryptedText << endl;
 
                     if (plaintext == decryptedText)
                     {
@@ -354,7 +360,11 @@ int main()
                     // listFiles(folderPath);
 
                     // Specify the ZIP file to unzip and the destination folder
-                    const char *zipFileName = "Protected\\Protected.zip"; // ZIP file to unzip
+                    // const char *zipFileName = "Protected\\Protected.zip"; // ZIP file to unzip
+                    cout << "Enter The Destination Of Protect Zip File: " << endl;
+                    const int maxSize = 100;  // Adjust the size according to your needs
+                    char zipFileName[maxSize];
+                    cin >> zipFileName;
                     const char *destinationFolder = "Unzipped_File_Secure";
 
                     // Ask the user for the password
